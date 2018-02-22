@@ -30,7 +30,22 @@ class Contact < ApplicationRecord
   #Uniqueness
   validates :email, uniqueness: true
 
-  #
+  #Allow nil
+  validates :state, allow_nil: true
+
+  #Allow blank
+  validates :phone, allow_blank:true
+
+  #Callbacks
+  before_validation
+  after_validation
+  before_save
+  around_save
+  before_create
+  around_create
+  after_create
+  after_save
+
 
 
 end
